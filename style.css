@@ -101,6 +101,10 @@
 
 /* Featured Section Styles  */
 
+#featuredIn{
+  background: var(--gradient-bg);
+}
+
 .feature-slider-dots .dot{
   width: 5px;
   height: 5px;

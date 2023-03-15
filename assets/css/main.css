@@ -729,6 +729,31 @@ video {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.bg-darkBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 25 33 / var(--tw-bg-opacity));
+}
+
+.bg-haiti {
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 41 52 / var(--tw-bg-opacity));
+}
+
+.bg-accentPink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 44 104 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -812,6 +837,11 @@ video {
   line-height: 1rem;
 }
 
+.text-accentPink {
+  --tw-text-opacity: 1;
+  color: rgb(225 44 104 / var(--tw-text-opacity));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -825,6 +855,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-whiteShade {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @font-face {
@@ -941,6 +975,10 @@ video {
 }
 
 /* Featured Section Styles  */
+
+#featuredIn{
+  background: var(--gradient-bg);
+}
 
 .feature-slider-dots .dot{
   width: 5px;
