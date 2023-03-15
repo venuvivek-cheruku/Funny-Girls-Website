@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "MA Bold";
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf");
+}
+@font-face {
+  font-family: "Ma Regular";
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
+}
+@font-face {
+  font-family: "MA Light";
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-Light.ttf");
+}
+@font-face {
+  font-family: "MA ExtraBold";
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "MA SemiBold";
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "Roboto ExtraBold";
+  src: url("../fonts/Roboto/Roboto-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Roboto SemiBold";
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+
+/* default styles  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section-starts {
+  margin-top: 150px;
+}
+
+.inner-container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1500px) {
+  .inner-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+
+
+.section-title-underline{
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  
+}
+.section-title-underline::after{
+  content: "";
+  background: linear-gradient(to right, #BB2557, #161516);
+  height: 5px;
+  display: block;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+/* Banner Styles */
+
+.banner-container{
+  width: 100%;
+  height: 800px;
+}
+
+/* Featured Section Styles  */
+
+.feature-slider-dots .dot{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+
+}
+
+/* body-banner styles */
+
+#body-banner{
+  width: 100%;
+  height: 600px;
+  
+}
+
+
+/* Phenomenon Section Styles */
+

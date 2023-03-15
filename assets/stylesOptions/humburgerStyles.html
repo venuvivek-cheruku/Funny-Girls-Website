@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>humburger</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #efefef;
+        font-family: "Roboto", sans-serif;
+        color: #212121;
+      }
+      .container {
+        position: relative;
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      h1,
+      p {
+        text-align: center;
+      }
+      .btn1 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 100px;
+        left: 0px;
+        transition-duration: 0.5s;
+      }
+      .btn1 .icon-left {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 30px;
+        top: 30px;
+        background-color: #212121;
+        left: 0px;
+      }
+      .btn1 .icon-left:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn1 .icon-left:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn1 .icon-left:hover {
+        cursor: pointer;
+      }
+      .btn1 .icon-right {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 30px;
+        top: 30px;
+        background-color: #212121;
+        left: 30px;
+      }
+      .btn1 .icon-right:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn1 .icon-right:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn1.open .icon-left {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn1.open .icon-left:before {
+        transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
+      }
+      .btn1.open .icon-left:after {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
+      }
+      .btn1.open .icon-right {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn1.open .icon-right:before {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
+      }
+      .btn1.open .icon-right:after {
+        transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
+      }
+      .btn1:hover {
+        cursor: pointer;
+      }
+      .btn2 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 100px;
+        left: 120px;
+        transition-duration: 0.5s;
+      }
+      .btn2 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn2 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn2 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn2.open .icon {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn2.open .icon:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(13px, 13px);
+      }
+      .btn2.open .icon:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+      }
+      .btn2:hover {
+        cursor: pointer;
+      }
+      .btn3 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 100px;
+        left: 240px;
+        transition-duration: 0.5s;
+      }
+      .btn3 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 0px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn3 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn3 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn3.open .icon {
+        transition-duration: 0.5s;
+      }
+      .btn3.open .icon:before {
+        transform: rotateZ(135deg) scaleX(1.25) translate(13px, -13px);
+      }
+      .btn3.open .icon:after {
+        transform: rotateZ(-135deg) scaleX(1.25) translate(12px, 12px);
+      }
+      .btn3:hover {
+        cursor: pointer;
+      }
+      .btn4 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 100px;
+        left: 360px;
+        transition-duration: 0.5s;
+      }
+      .btn4 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 0px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn4 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn4 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn4.open .icon {
+        transition: 0.5s;
+      }
+      .btn4.open .icon:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(12px, 12px);
+      }
+      .btn4.open .icon:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+      }
+      .btn4:hover {
+        cursor: pointer;
+      }
+      .btn5 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 200px;
+        left: 0px;
+        transition-duration: 0.5s;
+      }
+      .btn5 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn5 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn5 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn5.open .icon {
+        transition: 0.5s;
+      }
+      .btn5.open .icon:before {
+        transform: rotateZ(-45deg) scaleX(0.75) translate(-20px, -6px);
+      }
+      .btn5.open .icon:after {
+        transform: rotateZ(45deg) scaleX(0.75) translate(-20px, 6px);
+      }
+      .btn5:hover {
+        cursor: pointer;
+      }
+      .btn6 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 200px;
+        left: 120px;
+        transition-duration: 0.5s;
+      }
+      .btn6 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn6 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn6 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn6.open .icon {
+        transition-duration: 0.5s;
+        transform: rotateZ(180deg);
+      }
+      .btn6.open .icon:before {
+        transform: rotateZ(45deg) scaleX(0.75) translate(20px, -6px);
+      }
+      .btn6.open .icon:after {
+        transform: rotateZ(-45deg) scaleX(0.75) translate(20px, 6px);
+      }
+      .btn6:hover {
+        cursor: pointer;
+      }
+      .btn7 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 200px;
+        left: 240px;
+        transition-duration: 0.5s;
+      }
+      .btn7 .icon-E {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+        transition-delay: 0.5s;
+      }
+      .btn7 .icon-E:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn7 .icon-E:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn7 .icon-X {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 0px;
+        width: 200px;
+        top: 30px;
+        background-color: #212121;
+        transform: scaleX(0);
+        transform-origin: 30px 0px;
+      }
+      .btn7 .icon-X:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+        transform: rotateZ(45deg) scaleX(1.25) translate(12px, 12px);
+      }
+      .btn7 .icon-X:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+        transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+      }
+      .btn7 .icon-X:hover {
+        cursor: pointer;
+      }
+      .btn7.open .icon-E {
+        transition-duration: 0.5s;
+        transform: scaleX(0);
+        transition-delay: 0s;
+      }
+      .btn7.open .icon-X {
+        transition: 0.5s;
+        transition-delay: 0.5s;
+        transform: scaleX(1);
+      }
+      .btn7:hover {
+        cursor: pointer;
+      }
+      .btn8 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 200px;
+        left: 360px;
+        transition-duration: 0.5s;
+      }
+      .btn8 .icon-E {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+        transform-origin: 0px 0px;
+        transition-delay: 0.5s;
+      }
+      .btn8 .icon-E:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn8 .icon-E:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn8 .icon-X {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 0px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+        transform-origin: 0px 0px;
+        transform: scaleY(0);
+      }
+      .btn8 .icon-X:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+        transform: rotateZ(45deg) scaleX(1.25) translate(12px, 12px);
+      }
+      .btn8 .icon-X:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+        transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+      }
+      .btn8.open .icon-E {
+        transition-duration: 0.5s;
+        transform: scaleY(0);
+        transition-delay: 0s;
+      }
+      .btn8.open .icon-X {
+        transition: 0.5s;
+        transition-delay: 0.5s;
+        transform: scaleY(1);
+      }
+      .btn8:hover {
+        cursor: pointer;
+      }
+      .btn9 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 305px;
+        left: 0px;
+        transition-duration: 0.5s;
+      }
+      .btn9 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 0px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+        transform: rotateZ(90deg);
+        transform-origin: 30px 30px;
+        left: -15;
+        top: 0;
+      }
+      .btn9 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 60px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+        top: 0;
+      }
+      .btn9 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 60px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+        top: 0;
+        left: 30px;
+      }
+      .btn9.open .icon {
+        transition: all 0.5s;
+        transform: rotateZ(0deg);
+      }
+      .btn9.open .icon:before {
+        width: 22.5px;
+      }
+      .btn9.open .icon:after {
+        transform-origin: 30px 60px;
+        transform: scaleX(0.75);
+      }
+      .btn9.play .icon {
+        transition: all 0.5s;
+        transform: rotateZ(0deg);
+      }
+      .btn9.play .icon:before {
+        width: 500px;
+      }
+      .btn9.play .icon:after {
+        transform-origin: 30px 60px;
+        transform: scaleX(2);
+      }
+      .btn9:hover {
+        cursor: pointer;
+      }
+      .btn10 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 300px;
+        left: 120px;
+        transition-duration: 0.5s;
+      }
+      .btn10 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 8px;
+        width: 60px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn10 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: -20px;
+      }
+      .btn10 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background-color: #212121;
+        content: "";
+        top: 20px;
+      }
+      .btn10.open .icon {
+        transition-duration: 0.5s;
+        transform: rotateZ(-180deg);
+      }
+      .btn10.open .icon:before {
+        transform: rotateZ(-45deg) scaleX(0.75) translate(-20px, -6px);
+      }
+      .btn10.open .icon:after {
+        transform: rotateZ(45deg) scaleX(0.75) translate(-20px, 6px);
+      }
+      .btn10:hover {
+        cursor: pointer;
+      }
+      .btn11 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 300px;
+        left: 240px;
+        transition-duration: 0.5s;
+      }
+      .btn11 .icon-left {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 4px;
+        width: 15px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn11 .icon-left:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 15px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: -10px;
+      }
+      .btn11 .icon-left:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 15px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: 10px;
+      }
+      .btn11 .icon-left:hover {
+        cursor: pointer;
+      }
+      .btn11 .icon-right {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 4px;
+        width: 15px;
+        top: 30px;
+        background-color: #212121;
+        left: 15px;
+      }
+      .btn11 .icon-right:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 15px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: -10px;
+      }
+      .btn11 .icon-right:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 15px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: 10px;
+      }
+      .btn11.open .icon-left {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn11.open .icon-left:before {
+        transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+      }
+      .btn11.open .icon-left:after {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+      }
+      .btn11.open .icon-right {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn11.open .icon-right:before {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+      }
+      .btn11.open .icon-right:after {
+        transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+      }
+      .btn11:hover {
+        cursor: pointer;
+      }
+      .btn12 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 300px;
+        left: 315px;
+        transition-duration: 0.5s;
+      }
+      .btn12 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn12 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: -10px;
+      }
+      .btn12 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: 10px;
+      }
+      .btn12.open .icon {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn12.open .icon:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+      }
+      .btn12.open .icon:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+      }
+      .btn12:hover {
+        cursor: pointer;
+      }
+      .btn13 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 300px;
+        left: 390px;
+        transition-duration: 0.5s;
+      }
+      .btn13 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        top: 30px;
+        background-color: #212121;
+      }
+      .btn13 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: -10px;
+      }
+      .btn13 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: 10px;
+      }
+      .btn13.open .icon {
+        transition: 0.5s;
+      }
+      .btn13.open .icon:before {
+        transform: rotateZ(-45deg) scaleX(0.75) translate(-10px, -3px);
+      }
+      .btn13.open .icon:after {
+        transform: rotateZ(45deg) scaleX(0.75) translate(-10px, 3px);
+      }
+      .btn13:hover {
+        cursor: pointer;
+      }
+      .btn14 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 400px;
+        left: 15px;
+        transition-duration: 0.5s;
+      }
+      .btn14 .icon-circle {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        top: 2px;
+        border-radius: 100%;
+        background: transparent;
+        border: 4px solid black;
+        left: -15px;
+      }
+      .btn14 .icon-circle:hover {
+        background: #fff;
+      }
+      .btn14 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        top: 30px;
+        background-color: #212121;
+        border-radius: 4px;
+      }
+      .btn14 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: -10px;
+        border-radius: 4px;
+      }
+      .btn14 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: 10px;
+        border-radius: 4px;
+      }
+      .btn14.open .icon-circle {
+        background: #fff;
+      }
+      .btn14.open .icon {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn14.open .icon:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+      }
+      .btn14.open .icon:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+      }
+      .btn14:hover {
+        cursor: pointer;
+      }
+      .btn15 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 400px;
+        left: 120px;
+        transition-duration: 0.5s;
+      }
+      .btn15 .icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        top: 30px;
+        background-color: #212121;
+        border-radius: 4px;
+        left: 15px;
+      }
+      .btn15 .icon:before {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: -10px;
+        border-radius: 4px;
+      }
+      .btn15 .icon:after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #212121;
+        content: "";
+        top: 10px;
+        border-radius: 4px;
+      }
+      .btn15.open .icon {
+        transition-duration: 0.5s;
+        background: transparent;
+      }
+      .btn15.open .icon:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+      }
+      .btn15.open .icon:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+      }
+      .btn15:hover {
+        background: #fff;
+        cursor: pointer;
+      }
+    </style>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>The Hamburger Menu</h1>
+          <p>(click)</p>
+
+          <div id="menu" class="menu btn1" onclick="openMenu()" data-menu="1">
+            <div class="icon-left"></div>
+            <div class="icon-right"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn2" data-menu="2">
+            <div class="icon"></div>
+          </div>
+
+          <div class="menu btn3" data-menu="3">
+            <div class="icon"></div>
+          </div>
+
+          <div class="menu btn4" data-menu="4">
+            <div class="icon"></div>
+          </div>
+
+          <div class="menu btn5" data-menu="5">
+            <div class="icon"></div>
+          </div>
+
+          <div class="menu btn6" data-menu="6">
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn7" data-menu="7">
+            <div class="icon-E"></div>
+            <div class="icon-X"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn8" data-menu="8">
+            <div class="icon-E"></div>
+            <div class="icon-X"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn9" data-menu="9">
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn10" data-menu="10">
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn11" data-menu="11">
+            <div class="icon-left"></div>
+            <div class="icon-right"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn12" data-menu="12">
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn13" data-menu="13">
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn14" data-menu="14">
+            <div class="icon-circle"></div>
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn15" data-menu="15">
+            <div class="icon"></div>
+          </div>
+
+          <div id="menu" onclick="openMenu()" class="menu btn16" data-menu="16">
+            <div class="icon"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // var expandArray = document.querySelectorAll('.expand');
+      // var buttonArray = document.querySelectorAll('.click-to-expand');
+
+      // document.querySelectorAll('.click-to-expand').forEach(function(i) {
+      //   i.addEventListener('click', function(e) {
+      //     const clickedBtnIndex = [...buttonArray].indexOf(e.target);
+      //     expandArray[clickedBtnIndex].classList.toggle("hidden");
+      //   })
+      // });
+
+      // Just one function for all buttons
+      // function btnClick(e) {
+      //   // Get link element from clicked button
+      //   let btn = e.target.closest('a');
+      //   // Get number from id
+      //   let num = btn.id.replace('btn', '');
+      //   // Show the panel
+      //   document.querySelector('#panel' + num).classList.toggle('show');
+      // }
+
+      // function panelClose(e) {
+      //   e.target.closest('div').classList.toggle('show');
+      // }
+
+      // // Get all buttons
+      // let btns = document.querySelectorAll('.btn');
+      // btns.forEach(btn => btn.addEventListener('click', btnClick));
+
+      // // Get all closing links
+      // let cls = document.querySelectorAll('.overlay a');
+      // cls.forEach(cl => cl.addEventListener('click', panelClose));
+
+      function openMenu() {
+        const menu = document.querySelectorAll(".menu");
+        // for (i = 0; i < menu.length; i++) {
+        //   menu[i].classList.toggle("open");
+        // }
+        menu.forEach((cl) => cl.classList.toggle("open"));
+      }
+    </script>
+  </body>
+</html>
