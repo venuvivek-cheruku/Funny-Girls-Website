@@ -44,6 +44,11 @@
   src: url("../fonts/Roboto/Roboto-Medium.ttf");
 }
 
+:root{
+  --gradient-bg : radial-gradient(82.46% 3526.28% at 5.17% 86.69%, #171921 0%, #171921 57.29%, #222222 100%);
+}
+
+
 /* default styles  */
 
 * {
