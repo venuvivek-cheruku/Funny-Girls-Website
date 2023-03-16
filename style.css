@@ -92,6 +92,26 @@
   margin-top: 10px;
 }
 
+.section-title-underline-left{
+  position: relative;
+}
+.section-title-underline-left::after{
+  content: "";
+  background: linear-gradient(to right, #BB2557, #161516);
+  height: 5px;
+  display: block;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+
+/* navigation styles */
+
+#nav-container{
+  z-index: 9999;
+}
+
+
 /* Banner Styles */
 
 .banner-container{
@@ -115,12 +135,99 @@
 
 /* body-banner styles */
 
-#body-banner{
+#video-banner{
   width: 100%;
   height: 600px;
-  
+  position: relative;
 }
 
+#video-banner video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-content-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* Phenomenon Section Styles */
 
+
+/* testimonial Styles */
+
+.testimonial.active {
+  width: 20rem/* 320px */;
+}
+
+.testimonial.active .stars,
+.testimonial.active .t-header,
+.testimonial.active .stars,
+.testimonial.active .t-content
+ {
+  display: flex;
+}
+
+.testimonial.active .t-verticle-header{
+  display: none;
+}
+
+.testimonial{
+  width: 80px;
+  position: relative;
+}
+
+.testimonial .stars,
+.testimonial .t-header,
+.testimonial .stars,
+.testimonial .t-content
+ {
+  display: none;
+}
+
+
+.t-verticle-header {
+  position: relative;
+}
+
+.t-verticle-header h3 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 24px;
+  width: -moz-max-content;
+  width: max-content;
+  transform: rotate(90deg);
+  top: 30px;
+  position: absolute;
+  left: -20px;
+}
+
+
+/* our stars styles */
+
+#our-stars{
+  background: var(--gradient-bg);
+}
+
+.our-stars-image-wrapper{
+  min-width: 160px;
+  height: 400px;
+  max-width: 160px;
+}
+
+.our-stars-image-wrapper.active{
+  min-width: 280px;
+  height: 400px;
+  max-width: 280px;
+}
+
+.our-stars-images img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}

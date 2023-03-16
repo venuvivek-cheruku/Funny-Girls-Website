@@ -21,14 +21,29 @@
     <header>
       <nav
         id="nav-container"
-        class="nav-contianer fixed top-0 w-full left-0"
-        style="background: linear-gradient(0deg, rgba(25, 30, 66, 0.3), rgba(25, 30, 66, 0.3)), linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0.69) 100%);"
+        class="nav-contianer fixed top-0 w-full left-0 py-2"
+        style="
+          background: linear-gradient(
+              0deg,
+              rgba(25, 30, 66, 0.3),
+              rgba(25, 30, 66, 0.3)
+            ),
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.73) 0%,
+              rgba(0, 0, 0, 0.69) 100%
+            );
+        "
       >
         <div
           class="inner-container flex flex-row items-center justify-between text-white"
         >
           <div class="logo-container w-1/5">
-            <img src="./assets/images/logo.webp" alt="Funny Girls Logo" />
+            <img
+              class="w-52"
+              src="./assets/images/logo.png"
+              alt="Funny Girls Logo"
+            />
           </div>
           <ul class="nav-links flex flex-row justify-between w-3/5">
             <li class="nav-link current-page">
@@ -76,18 +91,18 @@
         class="banner-container"
         style="
           background: linear-gradient(to left, #000000, #00000049),
-            url('./assets/images/banner-image.webp') no-repeat center;
+            url('./assets/images/Rectangle-6.png') no-repeat center;
           background-size: cover;
         "
       >
         <div class="inner-container h-full">
           <div
-            class="banner-content-container flex flex-col justify-center text-white w-1/2 items-left gap-5 h-full ml-auto"
+            class="banner-content-container flex flex-col justify-center text-white w-1/2 items-left gap-5 h-full ml-auto p-10"
           >
             <div
               class="banner-title text-3xl md:text-4xl lg:text-5xl font-maBold"
             >
-              <h1>Funny Girls</h1>
+              <img src="./assets/images/logo.png" alt="" />
             </div>
             <div class="banner-description">
               <p>
@@ -172,21 +187,16 @@
       </section>
 
       <section
-        id="body-banner"
-        style="
-          background: linear-gradient(to right, #000000, #00000049),
-            url('./assets/images/funny-girls-1_649383126.jpg') no-repeat center;
-          background-size: cover;
-        "
+        id="video-banner"
+        style="background: linear-gradient(to right, #000000, #00000049)"
       >
-        <div class="inner-container w-full h-full">
-          <div
-            class="body-banner-container w-full h-full flex flex-col justify-center items-center gap-4 max-w-xl mx-auto"
-          >
+        <video autoplay src="./assets/images/bg-video.mp4"></video>
+        <div class="video-content-container text-center">
+          <div class="inner-container w-full h-full">
             <h1 class="text-white text-3xl md:text-4xl lg:text-5xl">
               A Show Like no other
             </h1>
-            <div class="text-center text-whiteShade">
+            <div class="text-whiteShade mt-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
               repudiandae molestias asperiores quisquam praesentium doloribus
               nulla, cum facere deleniti eos itaque natus modi odit libero
@@ -344,7 +354,9 @@
                 class="cta-btns mt-10 flex flex-row gap-10 font-RobotoSemiBold text-sm md:text-base"
               >
                 <div class="readmore-btn">
-                  <a class="px-6 py-2 rounded-full bg-accentPink text-white" href=""
+                  <a
+                    class="px-6 py-2 rounded-full bg-accentPink text-white"
+                    href=""
                     >Read More</a
                   >
                 </div>
@@ -366,9 +378,9 @@
           >
             Don't Listen us, listen to them
           </div>
-          <div class="testimonial-container mt-10 flex flex-nowrap">
+          <div class="testimonial-container mt-14 flex flex-nowrap gap-2">
             <div
-              class="testimonial bg-white p-4 rounded-lg w-80 flex flex-col gap-4"
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4 active"
             >
               <div
                 class="t-header-wrapper flex flex-row gap-4 justify-start items-center"
@@ -385,6 +397,13 @@
                   <em class="text-xs font-maLight">Feburary 5, 2023</em>
                 </div>
               </div>
+
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+
               <div class="stars flex flex-row gap-2">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -392,12 +411,194 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <div class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto">
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto"
+              >
                 Well wot can I say absolutely fantastic show the costumes the
                 dancing absolutely brilliant night ,great service and great
                 atmosphere just wish we lived closer blackpool you are very
-                lucky to have such a great place to go for a night out just wish we lived closer blackpool you are very
-                lucky to have such a great place!!
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+
+            <div
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4"
+            >
+              <div
+                class="t-header-wrapper flex flex-row gap-4 justify-start items-center"
+              >
+                <img
+                  class="t-profileImage w-12 h-12 object-cover rounded-full"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt=""
+                />
+                <div class="t-header flex flex-col">
+                  <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                    Lancy Gud
+                  </h3>
+                  <em class="text-xs font-maLight">Feburary 5, 2023</em>
+                </div>
+              </div>
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+              <div class="stars flex flex-row gap-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto"
+              >
+                Well wot can I say absolutely fantastic show the costumes the
+                dancing absolutely brilliant night ,great service and great
+                atmosphere just wish we lived closer blackpool you are very
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+
+            <div
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4"
+            >
+              <div
+                class="t-header-wrapper flex flex-row gap-4 justify-start items-center"
+              >
+                <img
+                  class="t-profileImage w-12 h-12 object-cover rounded-full"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt=""
+                />
+                <div class="t-header flex flex-col">
+                  <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                    Lancy Gud
+                  </h3>
+                  <em class="text-xs font-maLight">Feburary 5, 2023</em>
+                </div>
+              </div>
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+              <div class="stars flex flex-row gap-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto"
+              >
+                Well wot can I say absolutely fantastic show the costumes the
+                dancing absolutely brilliant night ,great service and great
+                atmosphere just wish we lived closer blackpool you are very
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+
+            <div
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4"
+            >
+              <div
+                class="t-header-wrapper flex flex-row gap-4 justify-start items-center"
+              >
+                <img
+                  class="t-profileImage w-12 h-12 object-cover rounded-full"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt=""
+                />
+                <div class="t-header flex flex-col">
+                  <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                    Lancy Gud
+                  </h3>
+                  <em class="text-xs font-maLight">Feburary 5, 2023</em>
+                </div>
+              </div>
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+              <div class="stars flex flex-row gap-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto"
+              >
+                Well wot can I say absolutely fantastic show the costumes the
+                dancing absolutely brilliant night ,great service and great
+                atmosphere just wish we lived closer blackpool you are very
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="our-stars" class="py-20">
+        <div class="inner-container">
+          <div class="our-stars-container flex flex-row overflow-hidden gap-10">
+            <div
+              class="our-stars-images flex-row-reverse w-3/5 flex gap-5 overflow-hidden"
+            >
+              <div class="our-stars-image-wrapper active">
+                <img src="./assets/images/dj-carmen.jpg" alt="" />
+              </div>
+              <div class="our-stars-image-wrapper">
+                <img src="./assets/images/stars2.jpg" alt="" />
+              </div>
+
+              <div class="our-stars-image-wrapper">
+                <img src="./assets/images/stars2.jpg" alt="" />
+              </div>
+              <div class="our-stars-image-wrapper">
+                <img src="./assets/images/stars3.jpg" alt="" />
+              </div>
+              <div class="our-stars-image-wrapper">
+                <img src="./assets/images/stars2.jpg" alt="" />
+              </div>
+            </div>
+            <div class="our-stars-content-wrapper w-2/5">
+              <div
+                class="section-title-underline-left text-white text-3xl md:text-4xl lg:text-5xl font-maBold text-left"
+              >
+                Stars Of The Show
+              </div>
+
+              <div class="our-stars-content mt-10">
+                <h2 class="font-RobotoBold text-2lg xl:text-3xl text-white">
+                  Nikki
+                </h2>
+                <p class="text-whiteShade mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi ratione illo quasi sunt alias ex, tenetur recusandae
+                  voluptates doloremque magni aliquam esse autem ullam
+                  distinctio unde repellat, quis omnis! Itaque.
+                </p>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base text-white mt-5"
+                >
+                  <a href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
               </div>
             </div>
           </div>
@@ -435,3 +636,4 @@
     <script src="./assets/js/custom.js"></script>
   </body>
 </html>
+/
