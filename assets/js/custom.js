@@ -1,204 +1,201 @@
-// Get the mobile-nav-container element and the hamburger button element
-const mobileNavContainer = document.querySelector(".mobile-menu-container");
-const hamburgerButton = document.querySelector("#humburger-menu");
 
-// Add a click event listener to the hamburger button
-hamburgerButton.addEventListener("click", function () {
-  // Toggle the "open" class on the mobile-nav-container
-  mobileNavContainer.classList.toggle("open");
-  hamburgerButton.classList.toggle("open");
-});
+//!testimonials 
+// Get testimonials and testimonial slider container
+const testimonials = document.querySelectorAll('.testimonial');
+const testimonialSlider = document.querySelector('.testimonial-container');
 
-// Get the element whose background color will change
-var element = document.getElementById("nav-container");
-var elementmobile = document.getElementById("nav-container-mobile");
+// Set initial variables
+let autoScroll = true;
+let mouseDown = false;
+let startX;
+let scrollLeft;
+let activeIndex = Math.floor(testimonials.length / 2);
 
-// Check the initial scroll position on page load
-window.addEventListener("load", function () {
-  var scrollPosition = window.scrollY;
-  if (scrollPosition > 1) {
-    element.style.backgroundColor = "#122045";
-    elementmobile.style.backgroundColor = "#122045";
+// Set initial active testimonial and add click event listener
+testimonials.forEach((testimonial, index) => {
+  if (index === activeIndex) {
+    testimonial.classList.add('active');
   }
+  
+  testimonial.addEventListener('click', () => {
+    testimonials.forEach(t => {
+      t.classList.remove('active');
+    });
+    testimonial.classList.add('active');
+    autoScroll = false;
+  });
+  
+  
+  // Add hover event listener to stop autoplay
+  testimonial.addEventListener('mouseover', () => {
+    autoScroll = false;
+  });
+
+  // Add mouse down event listener for dragging
+  testimonial.addEventListener('mousedown', e => {
+    mouseDown = true;
+    startX = e.pageX - testimonial.offsetLeft;
+    scrollLeft = testimonial.scrollLeft;
+    testimonial.classList.add('active');
+  });
+
+  // Add mouse up and mouse leave event listeners for dragging
+  testimonial.addEventListener('mouseup', () => {
+    mouseDown = false;
+  });
+
+  testimonial.addEventListener('mouseleave', () => {
+    mouseDown = false;
+    autoScroll = true;
+
+  });
+
+  // Add mouse move event listener for dragging
+  testimonial.addEventListener('mousemove', e => {
+    if (!mouseDown) return;
+    e.preventDefault();
+    const x = e.pageX - testimonial.offsetLeft;
+    const walk = (x - startX) * 2; // adjust scroll speed here
+    testimonial.scrollLeft = scrollLeft - walk;
+  });
+
+  // Add scroll event listener for autoplay
+  testimonial.addEventListener('scroll', () => {
+    if (autoScroll && testimonial.classList.contains('active')) {
+      autoScroll = false;
+      setTimeout(() => {
+        autoScroll = true;
+      }, 5000); // adjust slide delay here
+      const nextTestimonial = testimonial.nextElementSibling;
+      if (nextTestimonial) {
+        testimonialSlider.scrollLeft += nextTestimonial.getBoundingClientRect().left - testimonialSlider.getBoundingClientRect().left;
+      } else {
+        testimonialSlider.scrollLeft = 0;
+      }
+    }
+  });
 });
 
-// Add a scroll event listener to the window object
-window.addEventListener("scroll", function () {
-  // Check the current scroll position
-  if (window.scrollY > 1) {
-    // If the user has scrolled by at least 1 pixel, change the background color
-    element.style.backgroundColor = "#122045";
-    elementmobile.style.backgroundColor = "#122045";
-  } else {
-    // Otherwise, revert the background color to its original value
-    element.style.backgroundColor = "transparent";
-    elementmobile.style.backgroundColor = "transparent";
+// Handle dragging with the mouse
+const row = document.querySelector(".testimonial-container");
+let isDragging = false;
+
+row.addEventListener("mousedown", (event) => {
+  isDragging = true;
+  event.preventDefault();
+  startX = event.pageX - row.offsetLeft;
+  scrollLeft = row.scrollLeft;
+});
+
+row.addEventListener("mouseleave", (event) => {
+  event.preventDefault();
+  isDragging = false;
+});
+
+row.addEventListener("mouseup", (event) => {
+  event.preventDefault();
+  isDragging = false;
+});
+
+row.addEventListener("mousemove", (event) => {
+  if (!isDragging) return;
+  event.preventDefault();
+  const x = event.pageX - row.offsetLeft;
+  const walk = (x - startX) * 3; // Scroll 3x faster than the mouse movement
+  row.scrollLeft = scrollLeft - walk;
+});
+
+// Automatically scroll to the next testimonial every 5 seconds (adjustable)
+setInterval(() => {
+  const activeTestimonial = document.querySelector('.testimonial.active');
+  if (activeTestimonial && autoScroll) {
+    const nextTestimonial = activeTestimonial.nextElementSibling || testimonials[0];
+    testimonials.forEach(t => {
+      t.classList.remove('active');
+    });
+    nextTestimonial.classList.add('active');
+    testimonialSlider.scrollLeft += nextTestimonial.getBoundingClientRect().left - testimonialSlider.getBoundingClientRect().left;
   }
+}, 5000);
+
+
+// !our stars styles
+const imagesWrapper = document.querySelector('.our-stars-images');
+const images = imagesWrapper.querySelectorAll('.our-stars-image-wrapper');
+const contents = document.querySelectorAll('.our-stars-content');
+const numImages = images.length;
+const numContents = contents.length;
+let activeIndexS = 0;
+
+function navigateSlider(direction) {
+  // Calculate the new active index based on the direction (1 for right, -1 for left)
+  activeIndexS = (activeIndexS + direction + numImages) % numImages;
+
+  // Calculate the new translateX value based on the active index
+  const translateX = 180 * activeIndexS;
+
+  // Set the display and active classes for each image and content element
+  images.forEach((image, i) => {
+    const content = contents[i % numContents];
+   
+    if (i === activeIndexS) {
+      content.classList.add('active');
+      image.classList.add('active');
+    } else {
+      image.classList.remove('active');
+      content.classList.remove('active');
+    }
+
+    // Apply the new translateX value as a transform
+    image.style.transform = `translateX(${translateX}px)`;
+  });
+}
+
+// Attach click event handlers to left and right arrows
+document.querySelector('.left-arrow').addEventListener('click', () => {
+  navigateSlider(-1);
 });
 
-// var customCursor =
-//   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='aquamarine'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='blue' font-size='14'>find out more%3C/text%3E%3C/svg%3E\") 50 50, pointer";
+document.querySelector('.right-arrow').addEventListener('click', () => {
+  navigateSlider(1);
+});
 
-// function changeCursor(element) {
-//   element.style.cursor = customCursor;
-//   element.style.transform = "scale(0.1), transition: all 0.2s ease-in-out";
-// }
+
+// !GSAP animations
 
 gsap.registerPlugin(ScrollTrigger);
 
-const cursor = document.querySelector(".cursor");
-const cursorOne = document.querySelector(".cursor-one");
-const cursorTwo = document.querySelector(".cursor-two");
-const cursorThree = document.querySelector(".cursor-three");
-const cursorPhone = document.querySelector(".cursor-phone");
-const cursorMail = document.querySelector(".cursor-mail");
-const gridBoxes = document.querySelector(".grid-box");
-const links = document.querySelector(".cursor-pointer");
-const btn = document.querySelector(".cursor-eye");
-let scale = 1;
+ScrollTrigger.batch(".swipe-item", {
+  batchMax: 3,
+  markers: true,
+  start: "top bottom",
 
-function mousemoveHandler(e) {
-  const target = e.target;
-  const tl = gsap.timeline({
-    defaults: {
-      x: e.clientX,
-      y: e.clientY,
-      ease: "power2.out",
-    },
-  });
-
-  // console.log(e.target);
-
-  if (target.classList.contains("cta")) {
-    tl.to(cursorTwo, {
-      opacity: 0,
-    }).to(
-      cursorThree,
-      {
-        opacity: 0.5,
-        scale: 1.5,
-      },
-      "-=0.5"
-    );
-    return;
-  }
-
-  if (target.classList.contains("tel")) {
-    tl.to(cursorTwo, {
-      opacity: 0,
-    }).to(
-      cursorPhone,
-      {
-        opacity: 0.5,
-        scale: 1.5,
-      },
-      "-=0.5"
-    );
-    return;
-  }
-
-  if (target.classList.contains("email")) {
-    tl.to(cursorTwo, {
-      opacity: 0,
-    }).to(
-      cursorMail,
-      {
-        opacity: 0.5,
-        scale: 1.5,
-      },
-      "-=0.5"
-    );
-    return;
-  }
-
-  if (
-    target.tagName.toLowerCase() === "main" ||
-    target.tagName.toLowerCase() === "canvas" ||
-    target.tagName.toLowerCase() === "nav" ||
-    target.classList.contains("footer-container") ||
-    target.classList.contains("template-container") ||
-    target.classList.contains("contact-details-container")
-  ) {
-    gsap.to(".cursor", {
-      opacity: 0,
+  onEnter: (batch) => {
+    gsap.to(batch, {
+      autoAlpha: 1,
+      start: "top bottom",
+      stagger: 0.15,
+      opacity: 1,
+      y: 0,
+      ease: "power3",
     });
-    return;
-  }
-
-  if (target.closest(".grid-content")) {
-    tl.to(cursorOne, {
-      opacity: 0,
-    }).to(
-      cursorTwo,
-      {
-        opacity: 1,
-      },
-      "-=0.5"
-    );
-  } else if (target.classList.contains("cursor-pointer")) {
-    tl.to(cursorTwo, {
-      opacity: 0,
-    }).to(
-      cursorOne,
-      {
-        opacity: 0.5,
-        scale: 1.5,
-      },
-      "-=0.5"
-    );
-  } else {
-    tl.to(cursorThree, {
-      opacity: 0,
-      scale: scale,
-    }).to(
-      cursorTwo,
-      {
-        opacity: 0,
-      },
-      "-=0.5"
-    );
-  }
-}
-
-function mouseleaveHandler() {
-  gsap.to(".cursor", {
-    opacity: 0,
-  });
-}
-
-document.addEventListener("scroll", function (e) {
-  gsap.to(".cursor", {
-    opacity: 0,
-  });
+  },
 });
 
-document.addEventListener("wheel", function (e) {
-  gsap.to(".cursor", {
-    opacity: 0,
-  });
+const reavealTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".reveal-item",
+    start: "top bottom", // when the top of the trigger hits the top of the viewport
+    end: "bottom bottom", // end after scrolling 500px beyond the start
+    markers: false,
+    once: true,
+  },
 });
 
-document.addEventListener("mousemove", mousemoveHandler);
-document.addEventListener("mouseleave", mouseleaveHandler);
-
-// contact form styles
-
-let inputElements = document.querySelectorAll(".inputClass");
-
-inputElements.forEach((element) => {
-  if (element.value !== "" && element.value !== "on") {
-    element.parentElement.querySelector(".label").classList.add("has-value");
-  }
-
-  element.addEventListener("blur", (event) => {
-    if (event.target.value === "") {
-      event.target.parentElement
-        .querySelector(".label")
-        .classList.remove("has-value");
-    } else {
-      event.target.parentElement
-        .querySelector(".label")
-        .classList.add("has-value");
-    }
-  });
+reavealTL.to(".reveal-item .char", {
+  y: 0,
+  opacity: 1,
+  stagger: 0.03,
+  duration: 0.01,
+  ease: "power4.out",
 });
