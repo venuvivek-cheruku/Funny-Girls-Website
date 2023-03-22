@@ -1,5 +1,88 @@
 
-//!testimonials 
+//! feature section slider
+// Get the slider container element
+const slider = document.querySelector('.featured-slider');
+
+// Get the slider arrows and dots
+const prevArrow = document.querySelector('.arrow.prev');
+const nextArrow = document.querySelector('.arrow.next');
+const dots = document.querySelectorAll('.feature-slider-dots .dot');
+
+// Set the autoplay interval in milliseconds
+const autoplayInterval = 2000;
+
+// Initialize the current slide index and autoplay interval ID
+let currentSlideIndex = 0;
+let autoplayIntervalId = null;
+
+// Function to show the current slide
+const showSlide = () => {
+  // Hide all slides
+  const slides = slider.querySelectorAll('.featured-slide');
+  slides.forEach((slide) => slide.classList.remove('active'));
+
+  // Show the current slide
+  slides[currentSlideIndex].classList.add('active');
+
+  // Update the dots
+  dots.forEach((dot, index) => {
+    if (index === currentSlideIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+};
+
+// Function to go to the next slide
+const nextSlide = () => {
+  currentSlideIndex++;
+  if (currentSlideIndex >= slider.children.length) {
+    currentSlideIndex = 0;
+  }
+  showSlide();
+};
+
+// Function to go to the previous slide
+const prevSlide = () => {
+  currentSlideIndex--;
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = slider.children.length - 1;
+  }
+  showSlide();
+};
+
+// Start autoplay
+autoplayIntervalId = setInterval(nextSlide, autoplayInterval);
+
+// Add event listeners to the arrows and dots
+prevArrow.addEventListener('click', () => {
+  clearInterval(autoplayIntervalId);
+  prevSlide();
+  autoplayIntervalId = setInterval(nextSlide, autoplayInterval);
+});
+
+nextArrow.addEventListener('click', () => {
+  clearInterval(autoplayIntervalId);
+  nextSlide();
+  autoplayIntervalId = setInterval(nextSlide, autoplayInterval);
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    clearInterval(autoplayIntervalId);
+    currentSlideIndex = index;
+    showSlide();
+    autoplayIntervalId = setInterval(nextSlide, autoplayInterval);
+  });
+});
+
+
+
+
+
+
+//!testimonials slider
 // Get testimonials and testimonial slider container
 const testimonials = document.querySelectorAll('.testimonial');
 const testimonialSlider = document.querySelector('.testimonial-container');
@@ -119,7 +202,7 @@ setInterval(() => {
 }, 5000);
 
 
-// !our stars styles
+// !our stars sliders
 const imagesWrapper = document.querySelector('.our-stars-images');
 const images = imagesWrapper.querySelectorAll('.our-stars-image-wrapper');
 const contents = document.querySelectorAll('.our-stars-content');
@@ -165,22 +248,7 @@ document.querySelector('.right-arrow').addEventListener('click', () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.batch(".swipe-item", {
-  batchMax: 3,
-  markers: true,
-  start: "top bottom",
 
-  onEnter: (batch) => {
-    gsap.to(batch, {
-      autoAlpha: 1,
-      start: "top bottom",
-      stagger: 0.15,
-      opacity: 1,
-      y: 0,
-      ease: "power3",
-    });
-  },
-});
 
 const reavealTL = gsap.timeline({
   scrollTrigger: {
@@ -199,3 +267,5 @@ reavealTL.to(".reveal-item .char", {
   duration: 0.01,
   ease: "power4.out",
 });
+
+

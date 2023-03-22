@@ -48,22 +48,22 @@
               <a class="cursor-pointer" href="./pages/whoWeAre.html">About</a>
             </li>
             <li class="nav-link">
-              <a class="cursor-pointer" href="./pages/meetTheTeam.html"
+              <a class="cursor-pointer" href="./pages/product-page.html"
                 >Food & Drinks</a
               >
             </li>
             <li class="nav-link">
-              <a class="cursor-pointer" href="./pages/meetTheTeam.html"
+              <a class="cursor-pointer" href="./pages/product-page.html"
                 >Deals</a
               >
             </li>
             <li class="nav-link">
-              <a class="cursor-pointer" href="./pages/meetTheTeam.html"
+              <a class="cursor-pointer" href="./pages/product-page.html"
                 >Shops</a
               >
             </li>
             <li class="nav-link login-btn">
-              <a class="cursor-pointer" href="./pages/meetTheTeam.html"
+              <a class="cursor-pointer" href="./pages/product-page.html"
                 >Login</a
               >
             </li>
@@ -117,7 +117,8 @@
           <h1 class="font-maBold text-center text-3xl md:text-4xl lg:text-5xl">
             Featured In
           </h1>
-          <div class="featured-slider mt-14 flex flex-row justify-around">
+          <div
+            class="featured-slider mt-14 flex flex-row justify-around text-white">
             <div class="featured-slide flex flex-col gap-4 items-center">
               <div class="stars flex flex-row gap-2">
                 <i class="fa-solid fa-star"></i>
@@ -127,11 +128,11 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="feature-content text-center">
-                <em> <q> Rauncy extravangza of burlesque and circus</q></em>
+                <em><q> Rauncy extravangza of burlesque and circus</q></em>
                 <p class="font-maSemiBold mt-2"><b>The Sun</b></p>
               </div>
             </div>
-            <div class="featured-slide flex flex-col gap-4 items-center">
+            <div class="featured-slide flex flex-col gap-4 items-center active">
               <div class="stars flex flex-row gap-2">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -140,15 +141,13 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="feature-content text-center">
-                <em>
-                  <q>
-                    The experience as a whole deserves every star in the night
+                <em
+                  ><q
+                    >The experience as a whole deserves every star in the night
                     sky.</q
                   ></em
                 >
-                <p class="font-maSemiBold mt-2">
-                  <b>West End Best Friend</b>
-                </p>
+                <p class="font-maSemiBold mt-2"><b>West End Best Friend</b></p>
               </div>
             </div>
             <div class="featured-slide flex flex-col gap-4 items-center">
@@ -160,16 +159,23 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="feature-content text-center">
-                <em> <q> Rauncy extravangza of burlesque and circus</q></em>
+                <em><q> Rauncy extravangza of burlesque and circus</q></em>
                 <p class="font-maSemiBold mt-2"><b>The Sun</b></p>
+              </div>
+            </div>
+            <div
+              class="feature-slider-arrows flex flex-row gap-4 items-center justify-between">
+              <div class="arrow prev">
+                <i class="fa-solid fa-angle-left"></i>
+              </div>
+              <div class="arrow next">
+                <i class="fa-solid fa-angle-right"></i>
               </div>
             </div>
           </div>
 
           <div
             class="feature-slider-dots flex flex-row gap-2 justify-center items-center mt-10">
-            <div class="dot"></div>
-            <div class="dot"></div>
             <div class="dot"></div>
             <div class="dot"></div>
             <div class="dot"></div>
@@ -180,8 +186,27 @@
       <section
         id="video-banner"
         style="background: linear-gradient(to right, #000000, #00000049)">
-        <video autoplay src="./assets/images/bg-video.mp4"></video>
-        <div class="video-content-container text-center">
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          <iframe
+            src="https://player.vimeo.com/video/810350200?h=681dd3ac94&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; no-controls"
+            allowfullscreen
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="Main Edit 3"></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <!-- <video
+          autoplay
+          src="https://www.dropbox.com/s/rjcnq1qemxxzw2g/Main%20Edit%203.mp4"></video> -->
+        <!-- <div class="video-content-container text-center">
           <div class="inner-container w-full h-full">
             <h1 class="text-white text-3xl md:text-4xl lg:text-5xl reveal-item">
               A Show Like no other
@@ -193,7 +218,7 @@
               ullam, error provident similique vero.
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
 
       <section id="phenomenon" class="py-40 bg-darkBlue text-white">
@@ -749,6 +774,10 @@
           </div>
         </div>
       </section>
+
+      <section>
+        <div class="bg-container"></div>
+      </section>
     </main>
     <footer id="footer" class="mt-20 bg-black rounded-t-xl"></footer>
 
@@ -776,8 +805,9 @@
       </div>
     </div> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.2/split.min.js"
       integrity="sha512-to2k78YjoNUq8+hnJS8AwFg/nrLRFLdYYalb18SlcsFRXavCOTfBF3lNyplKkLJeB8YjKVTb1FPHGSy9sXfSdg=="
