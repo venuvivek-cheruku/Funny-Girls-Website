@@ -19,7 +19,7 @@
     <header>
       <nav
         id="nav-container"
-        class="nav-contianer fixed top-0 w-full left-0 py-2"
+        class="nav-contianer fixed top-0 w-full left-0 py-2 hidden lg:block"
         style="
           background: linear-gradient(
               0deg,
@@ -34,41 +34,45 @@
         ">
         <div
           class="inner-container flex flex-row items-center justify-between text-white">
-          <div class="logo-container w-1/5">
+          <div class="logo-container w-1/3">
             <img
               class="w-52"
               src="./assets/images/logo.png"
               alt="Funny Girls Logo" />
           </div>
-          <ul class="nav-links flex flex-row justify-between w-3/5">
-            <li class="nav-link current-page">
+          <ul class="nav-links flex flex-row justify-between w-2/3">
+            <li class="nav-link current-page text-lg font-Roboto">
               <a class="cursor-pointer" href="./index.html">Home</a>
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./pages/whoWeAre.html">About</a>
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./pages/product-page.html"
                 >Food & Drinks</a
               >
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./pages/product-page.html"
                 >Deals</a
               >
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./pages/product-page.html"
                 >Shops</a
               >
             </li>
-            <li class="nav-link login-btn">
-              <a class="cursor-pointer" href="./pages/product-page.html"
+            <li class="nav-link text-lg font-Roboto login-btn">
+              <a
+                class="cursor-pointer rounded-full px-6 py-2 bg-white text-black"
+                href="./pages/product-page.html"
                 >Login</a
               >
             </li>
-            <li class="nav-link">
-              <a class="cursor-pointer" href="./pages/meetTheTeam.html"
+            <li class="nav-link text-lg font-Roboto">
+              <a
+                class="cursor-pointer px-6 py-2 rounded-full bg-accentPink text-white"
+                href="./pages/meetTheTeam.html"
                 >Book Tickets</a
               >
             </li>
@@ -78,7 +82,52 @@
 
       <!-- mobile navigation -->
 
-      <nav class="mobile-menu-mobile md:hidden"></nav>
+      <nav
+        id="nav-container"
+        class="mobile-menu-mobile fixed top-0 w-full left-0 py-2 lg:hidden"
+        style="
+          background: linear-gradient(
+              0deg,
+              rgba(25, 30, 66, 0.3),
+              rgba(25, 30, 66, 0.3)
+            ),
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.73) 0%,
+              rgba(0, 0, 0, 0.69) 100%
+            );
+        ">
+        <div
+          class="inner-container flex flex-row items-center justify-between text-white">
+          <div class="logo-container w-1/3">
+            <img
+              class="w-52"
+              src="./assets/images/logo.png"
+              alt="Funny Girls Logo" />
+          </div>
+          <div
+            class="nav-icons-container flex flex-row items-center justify-between gap-8">
+            <div class="nav-link text-2xl font-Roboto login-btn">
+              <a
+                class="cursor-pointer text-white"
+                href="./pages/product-page.html"
+                ><i class="fas fa-user-alt"></i
+              ></a>
+            </div>
+            <div class="nav-link text-2xl font-Roboto">
+              <a
+                class="cursor-pointer text-white"
+                href="./pages/meetTheTeam.html">
+                <i class="fa fa-basket-shopping"></i
+              ></a>
+            </div>
+            <div id="humburger-menu" class="menu btn">
+              <div class="icon"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="mobile-menu-container lg:hidden"></div>
     </header>
     <main>
       <section
@@ -91,12 +140,15 @@
         ">
         <div class="inner-container h-full">
           <div
-            class="banner-content-container flex flex-col justify-center text-white w-1/2 items-left gap-5 h-full ml-auto p-10">
-            <div
-              class="banner-title text-3xl md:text-4xl lg:text-5xl font-maBold">
-              <img src="./assets/images/logo.png" alt="" />
+            class="banner-content-container flex flex-col justify-center text-white md:w-3/4 lg:w-1/2 items-left gap-5 h-full ml-auto p-10">
+            <div class="banner-title">
+              <img
+                class="w-80"
+                src="./assets/images/logo.png"
+                alt="Funny Girls Logo" />
             </div>
-            <div class="banner-description">
+            <div
+              class="banner-description text-base md:text-lg font-RobotoRegular">
               <p>
                 Funny Girls is a unique experience offering an unforgettable
                 evening of funny, cheeky, good old fashioned cabaret with a
@@ -112,8 +164,8 @@
         </div>
       </section>
 
-      <section id="featuredIn" class="py-20 text-white">
-        <div class="inner-container">
+      <section id="featuredIn" class="py-20 md:py-40 text-white">
+        <!-- <div class="inner-container">
           <h1 class="font-maBold text-center text-3xl md:text-4xl lg:text-5xl">
             Featured In
           </h1>
@@ -180,6 +232,99 @@
             <div class="dot"></div>
             <div class="dot"></div>
           </div>
+        </div> -->
+
+        <div class="inner-container">
+          <div class="featured-in-slider">
+            <div class="featured-ins-container">
+              <div class="featuredIn-slide">
+                <div class="featured-in">
+                  <div
+                    class="featured-in-stars-container flex flex-row gap-2 justify-center mb-2">
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                  </div>
+                  <i class="font-maRegular text-sm md:text-base">
+                    "Rauncy extravangza of burlesque and circus"
+                  </i>
+                  <h3
+                    class="mt-2 font-RobotoBold text-lg: md:text-xl lg:text-2xl">
+                    The Sun
+                  </h3>
+                </div>
+              </div>
+              <div class="featuredIn-slide">
+                <div class="featured-in">
+                  <div
+                    class="featured-in-stars-container flex flex-row gap-2 justify-center mb-2">
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                  </div>
+                  <i class="font-maRegular text-sm md:text-base">
+                    "The Experience as a whole deserves every star in the night
+                    sky."
+                  </i>
+                  <h3
+                    class="mt-2 font-RobotoBold text-lg: md:text-xl lg:text-2xl">
+                    West End Best Friend
+                  </h3>
+                </div>
+              </div>
+              <div class="featuredIn-slide">
+                <div class="featured-in">
+                  <div
+                    class="featured-in-stars-container flex flex-row gap-2 justify-center mb-2">
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                  </div>
+                  <i class="font-maRegular text-sm md:text-base">
+                    "Rauncy extravangza of burlesque and circus"
+                  </i>
+                  <h3
+                    class="mt-2 font-RobotoBold text-lg: md:text-xl lg:text-2xl">
+                    Broadway World
+                  </h3>
+                </div>
+              </div>
+              <div class="featuredIn-slide">
+                <div class="featured-in">
+                  <div
+                    class="featured-in-stars-container flex flex-row gap-2 justify-center mb-2">
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                    <i class="fa fa-star text-sm"></i>
+                  </div>
+                  <i class="font-maRegular text-sm md:text-base">
+                    "Rauncy extravangza of burlesque and circus"
+                  </i>
+                  <h3
+                    class="mt-2 font-RobotoBold text-lg: md:text-xl lg:text-2xl">
+                    The Sun
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              class="featured-in-controls flex flex-row justify-center gap-10 mt-10 items-center">
+              <div class="featured-in-arrow prev">
+                <i
+                  class="fas fa-arrow-circle-left text-accentPink text-3xl"></i>
+              </div>
+              <div class="featured-in-dots-container">
+                <div class="featured-in-dot"></div>
+                <div class="featured-in-dot"></div>
+                <div class="featured-in-dot"></div>
+                <div class="featured-in-dot"></div>
+              </div>
+              <div class="featured-in-arrow next">
+                <i
+                  class="fas fa-arrow-circle-right text-accentPink text-3xl"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -221,7 +366,7 @@
         </div> -->
       </section>
 
-      <section id="phenomenon" class="py-40 bg-darkBlue text-white">
+      <section id="phenomenon" class="py-20 md:py-40 bg-darkBlue text-white">
         <div class="inner-container">
           <div
             class="section-title-underline text-white text-3xl md:text-4xl lg:text-5xl font-maBold text-center">
@@ -229,14 +374,39 @@
             <span class="text-accentPink">Funny Girls</span> Phenomenon
           </div>
 
-          <div class="grid-boxes grid grid-cols-4 grid-flow-row gap-10 mt-14">
-            <div class="grid-box swipe-item">
+          <div
+            class="grid-boxes grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-14 justify-center items-center">
+            <div class="grid-box swipe-item bg-haiti rounded-xl">
               <img
-                class="h-64 object-cover rounded-t-lg"
+                class="h-64 w-full object-cover rounded-t-lg"
                 src="./assets/images/banner-image.webp"
                 alt="" />
               <div
-                class="grid-box-content bg-haiti flex flex-col gap-2 p-4 rounded-b-lg">
+                class="grid-box-content flex flex-col gap-2 p-4 rounded-b-lg h-full">
+                <h2 class="text-lg md:text-xl font-maSemiBold">Spring Show</h2>
+                <div
+                  class="grid-description text-xs font-RobotoRegular text-dark">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maxime, repudiandae molestias asperiores quisquam praesentium
+                  doloribusLorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Maxime, repudiandae molestias asperiores quisquam
+                  praesentium doloribus
+                </div>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base">
+                  <a href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="grid-box swipe-item bg-haiti rounded-xl">
+              <img
+                class="h-64 w-full object-cover rounded-t-lg"
+                src="./assets/images/banner-image.webp"
+                alt="" />
+              <div
+                class="grid-box-content flex flex-col gap-2 p-4 rounded-b-lg h-full">
                 <h2 class="text-lg md:text-xl font-maSemiBold">Spring Show</h2>
                 <div
                   class="grid-description text-xs font-RobotoRegular text-dark">
@@ -252,13 +422,13 @@
                 </div>
               </div>
             </div>
-            <div class="grid-box swipe-item">
+            <div class="grid-box swipe-item bg-haiti rounded-xl">
               <img
-                class="h-64 object-cover rounded-t-lg"
+                class="h-64 w-full object-cover rounded-t-lg"
                 src="./assets/images/banner-image.webp"
                 alt="" />
               <div
-                class="grid-box-content bg-haiti flex flex-col gap-2 p-4 rounded-b-lg">
+                class="grid-box-content flex flex-col gap-2 p-4 rounded-b-lg h-full">
                 <h2 class="text-lg md:text-xl font-maSemiBold">Spring Show</h2>
                 <div
                   class="grid-description text-xs font-RobotoRegular text-dark">
@@ -274,35 +444,13 @@
                 </div>
               </div>
             </div>
-            <div class="grid-box swipe-item">
+            <div class="grid-box swipe-item bg-haiti rounded-xl">
               <img
-                class="h-64 object-cover rounded-t-lg"
+                class="h-64 w-full object-cover rounded-t-lg"
                 src="./assets/images/banner-image.webp"
                 alt="" />
               <div
-                class="grid-box-content bg-haiti flex flex-col gap-2 p-4 rounded-b-lg">
-                <h2 class="text-lg md:text-xl font-maSemiBold">Spring Show</h2>
-                <div
-                  class="grid-description text-xs font-RobotoRegular text-dark">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Maxime, repudiandae molestias asperiores quisquam praesentium
-                  doloribus
-                </div>
-                <div
-                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base">
-                  <a href=""
-                    >Find Out More <i class="fas fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="grid-box">
-              <img
-                class="h-64 object-cover rounded-t-lg"
-                src="./assets/images/banner-image.webp"
-                alt="" />
-              <div
-                class="grid-box-content bg-haiti flex flex-col gap-2 p-4 rounded-b-lg">
+                class="grid-box-content flex flex-col gap-2 p-4 rounded-b-lg h-full">
                 <h2 class="text-lg md:text-xl font-maSemiBold">Spring Show</h2>
                 <div
                   class="grid-description text-xs font-RobotoRegular text-dark">
@@ -321,7 +469,7 @@
           </div>
 
           <div
-            class="dining-show-container flex flex-auto justify-between gap-20 mt-40 items-center">
+            class="dining-show-container flex flex-col md:flex-row justify-between gap-10 mt-20 md:mt-40 items-center">
             <div class="DS-image-container flex-1">
               <img
                 class="w-full h-full object-cover rounded-lg"
@@ -329,7 +477,7 @@
                 alt="dining-show-image" />
             </div>
 
-            <div class="DS-content-container flex-1">
+            <div class="DS-content-container flex-1 text-center md:text-left">
               <h1
                 class="text-3xl md:text-4xl lg:text-5xl text-accentPink font-maBold">
                 Dinning Show Experience
@@ -346,7 +494,7 @@
               </div>
 
               <div
-                class="cta-btns mt-10 flex flex-row gap-10 font-RobotoSemiBold text-sm md:text-base">
+                class="cta-btns mt-10 flex flex-row gap-10 font-RobotoSemiBold text-sm md:text-base justify-center md:justify-start">
                 <div class="readmore-btn">
                   <a
                     class="px-6 py-2 rounded-full bg-accentPink text-white"
@@ -365,13 +513,134 @@
         </div>
       </section>
 
-      <section id="testimonials" class="bg-haiti py-20">
+      <section id="testimonials" class="bg-haiti py-20 md:py-40">
         <div class="inner-container">
           <div
             class="section-title-underline text-white text-3xl md:text-4xl lg:text-5xl font-maBold text-center">
             Don't Listen us, listen to them
           </div>
-          <div class="testimonial-container mt-14 flex flex-nowrap gap-2">
+          <div
+            class="testimonial-container mt-14 grid grid-flow-col gap-2 justify-start items-center">
+            <div
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4">
+              <div
+                class="t-header-wrapper flex flex-row gap-4 justify-start items-center">
+                <img
+                  class="t-profileImage w-12 h-12 object-cover rounded-full"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt="" />
+                <div class="t-header flex flex-col">
+                  <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                    Lancy Gud
+                  </h3>
+                  <em class="text-xs font-maLight">Feburary 5, 2023</em>
+                </div>
+              </div>
+
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+
+              <div class="stars flex flex-row gap-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto">
+                Well wot can I say absolutely fantastic show the costumes the
+                dancing absolutely brilliant night ,great service and great
+                atmosphere just wish we lived closer blackpool you are very
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+
+            <div
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4">
+              <div
+                class="t-header-wrapper flex flex-row gap-4 justify-start items-center">
+                <img
+                  class="t-profileImage w-12 h-12 object-cover rounded-full"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt="" />
+                <div class="t-header flex flex-col">
+                  <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                    Lancy Gud
+                  </h3>
+                  <em class="text-xs font-maLight">Feburary 5, 2023</em>
+                </div>
+              </div>
+
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+
+              <div class="stars flex flex-row gap-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto">
+                Well wot can I say absolutely fantastic show the costumes the
+                dancing absolutely brilliant night ,great service and great
+                atmosphere just wish we lived closer blackpool you are very
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+
+            <div
+              class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4">
+              <div
+                class="t-header-wrapper flex flex-row gap-4 justify-start items-center">
+                <img
+                  class="t-profileImage w-12 h-12 object-cover rounded-full"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt="" />
+                <div class="t-header flex flex-col">
+                  <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                    Lancy Gud
+                  </h3>
+                  <em class="text-xs font-maLight">Feburary 5, 2023</em>
+                </div>
+              </div>
+
+              <div class="t-verticle-header">
+                <h3 class="text-base md:text-lg font-RobotoSemiBold">
+                  Lancy Gud
+                </h3>
+              </div>
+
+              <div class="stars flex flex-row gap-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div
+                class="t-content font-RobotoRegular text-sm h-32 overflow-y-auto">
+                Well wot can I say absolutely fantastic show the costumes the
+                dancing absolutely brilliant night ,great service and great
+                atmosphere just wish we lived closer blackpool you are very
+                lucky to have such a great place to go for a night out just wish
+                we lived closer blackpool you are very lucky to have such a
+                great place!!
+              </div>
+            </div>
+
             <div
               class="testimonial bg-white p-4 rounded-lg flex flex-col gap-4">
               <div
@@ -643,9 +912,10 @@
         </div>
       </section>
 
-      <section id="our-stars" class="py-20">
+      <section id="our-stars" class="py-20 md:py-40 hidden md:block">
         <div class="inner-container">
-          <div class="our-stars-container flex flex-row overflow-hidden gap-10">
+          <div
+            class="our-stars-container flex flex-col md:flex-row overflow-hidden gap-10">
             <div
               class="our-stars-images flex-row-reverse w-3/5 flex gap-5 overflow-hidden">
               <div class="our-stars-image-wrapper active">
@@ -769,6 +1039,147 @@
                   <i
                     class="fa fa-arrow-circle-right text-accentPink text-3xl"></i>
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- mobile section  -->
+      <section id="our-stars" class="py-20 md:py-40 md:hidden">
+        <div class="inner-container">
+          <div
+            class="section-title-underline text-white text-3xl md:text-4xl lg:text-5xl font-maBold text-left">
+            Stars Of The Show
+          </div>
+          <div
+            class="our-stars-container flex flex-col md:flex-row overflow-hidden gap-5 mt-14">
+            <div
+              class="our-stars-images mobile-stars flex-row-reverse w-full flex gap-5 overflow-hidden">
+              <div class="our-stars-image-wrapper active mobile-stars">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/dj-carmen.jpg"
+                  alt="" />
+              </div>
+              <div class="our-stars-image-wrapper mobile-stars">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/stars2.jpg"
+                  alt="" />
+              </div>
+
+              <div class="our-stars-image-wrapper mobile-stars">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/stars2.jpg"
+                  alt="" />
+              </div>
+              <div class="our-stars-image-wrapper mobile-stars">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/stars3.jpg"
+                  alt="" />
+              </div>
+              <div class="our-stars-image-wrapper mobile-stars">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/stars2.jpg"
+                  alt="" />
+              </div>
+            </div>
+            <div
+              class="our-stars-arrows flex flex-row justify-center items-center gap-5">
+              <button class="mobile-left-arrow">
+                <i class="fa fa-arrow-circle-left text-accentPink text-3xl"></i>
+              </button>
+              <button class="mobile-right-arrow">
+                <i
+                  class="fa fa-arrow-circle-right text-accentPink text-3xl"></i>
+              </button>
+            </div>
+            <div class="our-stars-content-wrapper">
+              <div class="our-stars-content mobile-stars active text-center">
+                <h2 class="font-RobotoBold text-2xl text-white">Nikki</h2>
+                <p class="text-whiteShade mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi ratione illo quasi sunt alias ex, tenetur recusandae
+                  voluptates doloremque magni aliquam esse autem ullam
+                  distinctio unde repellat, quis omnis! Itaque.
+                </p>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold justify-center text-base text-white mt-5">
+                  <a class="flex flex-row items-center gap-2" href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="our-stars-content mobile-stars text-center">
+                <h2 class="font-RobotoBold text-2xl text-white">Nikki 2</h2>
+
+                <p class="text-whiteShade mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi ratione illo quasi sunt alias ex, tenetur recusandae
+                  voluptates doloremque magni aliquam esse autem ullam
+                  distinctio unde repellat, quis omnis! Itaque.
+                </p>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base text-white mt-5 justify-center">
+                  <a class="flex flex-row items-center gap-2" href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="our-stars-content mobile-stars text-center">
+                <h2 class="font-RobotoBold text-2xl text-white">Nikki 3</h2>
+
+                <p class="text-whiteShade mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi ratione illo quasi sunt alias ex, tenetur recusandae
+                  voluptates doloremque magni aliquam esse autem ullam
+                  distinctio unde repellat, quis omnis! Itaque.
+                </p>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base text-white mt-5 justify-center">
+                  <a class="flex flex-row items-center gap-2" href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="our-stars-content mobile-stars text-center">
+                <h2 class="font-RobotoBold text-2xl text-white">Nikki 4</h2>
+
+                <p class="text-whiteShade mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi ratione illo quasi sunt alias ex, tenetur recusandae
+                  voluptates doloremque magni aliquam esse autem ullam
+                  distinctio unde repellat, quis omnis! Itaque.
+                </p>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base text-white mt-5 justify-center">
+                  <a class="flex flex-row items-center gap-2" href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="our-stars-content mobile-stars text-center">
+                <h2 class="font-RobotoBold text-2xl text-white">Nikki 5</h2>
+
+                <p class="text-whiteShade mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi ratione illo quasi sunt alias ex, tenetur recusandae
+                  voluptates doloremque magni aliquam esse autem ullam
+                  distinctio unde repellat, quis omnis! Itaque.
+                </p>
+                <div
+                  class="grid-btn flex flex-row gap-4 font-RobotoSemiBold text-base text-white mt-5 justify-center">
+                  <a class="flex flex-row items-center gap-2" href=""
+                    >Find Out More <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
               </div>
             </div>
           </div>

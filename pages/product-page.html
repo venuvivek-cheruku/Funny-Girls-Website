@@ -19,7 +19,7 @@
     <header>
       <nav
         id="nav-container"
-        class="nav-contianer fixed top-0 w-full left-0 py-2"
+        class="nav-contianer fixed top-0 w-full left-0 py-2 hidden lg:block"
         style="
           background: linear-gradient(
               0deg,
@@ -34,42 +34,96 @@
         ">
         <div
           class="inner-container flex flex-row items-center justify-between text-white">
-          <div class="logo-container w-1/5">
+          <div class="logo-container w-1/3">
             <img
               class="w-52"
-              src="../assets/images/logo.png"
+              src="./assets/images/logo.png"
               alt="Funny Girls Logo" />
           </div>
-          <ul class="nav-links flex flex-row justify-between w-3/5">
-            <li class="nav-link current-page">
+          <ul class="nav-links flex flex-row justify-between w-2/3">
+            <li class="nav-link current-page text-lg font-Roboto">
               <a class="cursor-pointer" href="../index.html">Home</a>
             </li>
-            <li class="nav-link">
-              <a class="cursor-pointer" href="./pages/whoWeAre.html">About</a>
+            <li class="nav-link text-lg font-Roboto">
+              <a class="cursor-pointer" href="./whoWeAre.html">About</a>
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./product-page.html"
                 >Food & Drinks</a
               >
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./product-page.html">Deals</a>
             </li>
-            <li class="nav-link">
+            <li class="nav-link text-lg font-Roboto">
               <a class="cursor-pointer" href="./product-page.html">Shops</a>
             </li>
-            <li class="nav-link login-btn">
-              <a class="cursor-pointer" href="./product-page.html">Login</a>
+            <li class="nav-link text-lg font-Roboto login-btn">
+              <a
+                class="cursor-pointer rounded-full px-6 py-2 bg-white text-black"
+                href="./product-page.html"
+                >Login</a
+              >
             </li>
-            <li class="nav-link">
-              <a class="cursor-pointer" href="./product-page.html"
+            <li class="nav-link text-lg font-Roboto">
+              <a
+                class="cursor-pointer px-6 py-2 rounded-full bg-accentPink text-white"
+                href="./product-page.html"
                 >Book Tickets</a
               >
             </li>
           </ul>
         </div>
       </nav>
-      <nav class="mobile-menu-mobile md:hidden"></nav>
+
+      <!-- mobile navigation -->
+
+      <nav
+        id="nav-container"
+        class="mobile-menu-mobile fixed top-0 w-full left-0 py-2 lg:hidden"
+        style="
+          background: linear-gradient(
+              0deg,
+              rgba(25, 30, 66, 0.3),
+              rgba(25, 30, 66, 0.3)
+            ),
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.73) 0%,
+              rgba(0, 0, 0, 0.69) 100%
+            );
+        ">
+        <div
+          class="inner-container flex flex-row items-center justify-between text-white">
+          <div class="logo-container w-1/3">
+            <img
+              class="w-52"
+              src="./assets/images/logo.png"
+              alt="Funny Girls Logo" />
+          </div>
+          <div
+            class="nav-icons-container flex flex-row items-center justify-between gap-8">
+            <div class="nav-link text-2xl font-Roboto login-btn">
+              <a
+                class="cursor-pointer text-white"
+                href="./pages/product-page.html"
+                ><i class="fas fa-user-alt"></i
+              ></a>
+            </div>
+            <div class="nav-link text-2xl font-Roboto">
+              <a
+                class="cursor-pointer text-white"
+                href="./pages/meetTheTeam.html">
+                <i class="fa fa-basket-shopping"></i
+              ></a>
+            </div>
+            <div id="humburger-menu" class="menu btn">
+              <div class="icon"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="mobile-menu-container lg:hidden"></div>
     </header>
 
     <main>
