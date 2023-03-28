@@ -1,0 +1,92 @@
+.BnowBookingMultiActivityFlowProducts .product_info_bites {
+  display: none;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_container {
+  padding: 0px;
+  flex-direction: column;
+  margin: 20px
+}
+
+.BnowBookingMultiActivityFlowProducts .product_info {
+  width: 375px;
+  background: black;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_image {
+  width: 375px;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_slots {
+  width: 375px;
+  border: none;
+}
+
+.BnowBookingMultiActivityFlowProducts{
+  display:flex
+}
+
+
+
+
+
+
+
+
+
+
+
+div.slds-col.slds-size_1-of-1.slds-large-size_3-of-4 {
+  width: 100%;
+}
+
+.slds-medium-size_1-of-4, .slds-medium-size--1-of-4 {
+  width: 0%;
+  display: none;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_info_bites {
+  display: none;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_container {
+  padding: 0px;
+  flex-direction: column;
+  margin: 20px
+}
+
+.BnowBookingMultiActivityFlowProducts .product_info {
+  width: 400px;
+  background: black;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_image {
+  width: 400px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.BnowBookingMultiActivityFlowProducts .product_slots {
+  width: 400px;
+  border-radius: 0px 0px 20px 20px;
+  border: none;
+}
+
+.BnowBookingMultiActivityFlowProducts {
+  columns: 3;
+}
+
+.BnowBookingMultiActivityFlowProducts .bof_action_button {
+  height: 40px;
+}
+
+.BnowBookingMultiActivityFlow * {
+  text-align: center;
+}
+
+.BnowBookingMultiActivityFlowProducts h3 {
+  font-size: 2.2em;
+}
+
+.BnowBookingOptionsForm .bof_action_button {
+  border-radius: 100px;
+}

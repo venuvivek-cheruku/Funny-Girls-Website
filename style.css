@@ -231,3 +231,9 @@
   object-fit: cover;
   border-radius: 0.5rem;
 }
+
+@layer components {
+  .contentHeader {
+    @apply text-[24px] font-bold 
+  }
+}
