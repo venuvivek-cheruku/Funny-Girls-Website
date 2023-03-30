@@ -444,3 +444,8 @@
 .our-stars-content.active {
   display: block;
 }
+@layer components {
+  .contentHeader {
+    @apply text-[24px] font-bold 
+  }
+}

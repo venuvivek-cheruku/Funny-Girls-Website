@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "productHeroImage": "url('./assets/images/bg.png')",
+      },
       fontFamily: {
         maBold: ["MA Bold"],
         maRegular: ["MA Regular"],
@@ -18,6 +21,8 @@ module.exports = {
         RobotoLight: ["Roboto Light"],
         RobotoExtraBold: ["Roboto ExtraBold"],
         RobotoSemiBold: ["Roboto SemiBold"],
+        DmSans:["DM Sans"],
+        DMSerif:["DM Serif Display"]
       },
       colors: {
         transparent: "transparent",
@@ -27,6 +32,8 @@ module.exports = {
         black: "#000000",
         white: "#FFFFFF",
         whiteShade: "rgba(255, 255, 255, 0.7)",
+        whiteText: "rgba(255, 255, 255, 0.8)",
+        accentPinkDimmed: "rgba(225, 44, 104, 0.8)"
       },
     },
   },
